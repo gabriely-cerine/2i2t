@@ -24,24 +24,51 @@ body{
 }
 .desc-estilos{
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgb(177, 198, 243);
 }
 .desc-solo{
     width: 100%;
-    background-color: palevioletred;
+    background-color: rgb(194, 79, 117);
 }
 .desc-grupo{
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgb(127, 204, 255);
 }
 .desc-bandas{
     width: 100%;
-    background-color: palevioletred;
+    background-color: rgb(231, 128, 162);
 }
 .desc-app{
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgb(137, 186, 219);
 }
 .img-ini{
     width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .menu {
+        height: 120px;
+        background-color: rgb(69, 160, 160);
+        color: azure;
+        font-size: 32px;
+    }
+    .desc-solo {
+        display: flex;
+    }
+    }
+    
+
+@media screen and (min-width: 1280px) {
+    .menu{
+        height: 200px;
+        background-color: rgb(142, 97, 184);
+        font-size: 64px;
+    }
+    .img-ini {
+        width: 50%;
+    }
+    .desc-solo {
+        display: grid;
+    }
+    
 }
