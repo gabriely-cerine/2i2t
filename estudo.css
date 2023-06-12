@@ -21,26 +21,31 @@ body {
 }
 .meu-site {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 20% 60% 20%;
     grid-template-areas: 
-          "menu menu"
-          "lado principal "
-          "rodape rodape"
+          "menu menu menu"
+          "principal principal lado"
+          "rodape rodape rodape"
     ;
 }
 .menu {
     height: 25vh;
     background-color: rgb(118, 78, 163);
+    grid-area: menu;
 }
 .lado{
     height: 25vh;
     background-color: rgb(90, 73, 185);
+    grid-area: lado;
 }
 .principal {
     height: 25vh;
     background-color: rgb(126, 73, 161);
+    grid-area: principal;
+
 }
 .rodape {
     height: 25vh;
     background-color: rgb(119, 41, 129);
+    grid-area: rodape;
 }
