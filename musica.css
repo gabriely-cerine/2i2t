@@ -1,180 +1,231 @@
 *{
     padding: 0;
-margin: 0;
+    margin: 0;
 }
-:root{
-    --fundo: rgb(201, 68, 68);
-    --fonte: rgb(170, 68, 201);
-    --hover: rgb(126, 55, 55);
 
+:root{
+    --fundo:rgb(161, 22, 241);
+    --fonte:rgb(234, 0, 255);
+    --rover:rgb(255, 0, 170);
 }
+
 body{
-    background-color: pink;
+    background-color: salmon;
 }
-a {
+
+
+a{
     text-decoration: none;
 }
-ul {
-    list-style: none;
 
+
+ul{
+    list-style: none;
 }
-.header {
-    background-color: var(--fundo);
-    width: 100%;
-    position: sticky;
-    top: 0;
-}
+
+
 .logo{
     display: inline-block;
-    
-    
+    color: var(--fonte);
+    font-size: 32px;
+
 }
-.logo {
-    height: 10vh;
+
+#logo{
+     
+     height: 15vh;
+    
+
 }
-.nav {
+
+
+.nav{
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: var(--hover);
     overflow: hidden;
+    background-color: var(--fundo);
 }
-.nav a {
-    display:block ;
+
+
+.nav a{
+    display: block;
     padding: 30px;
     color: var(--fonte);
+}
+
+
+.nav a:hover{
+    background-color: var(--rover);
 
 }
-.nav a:hover {
-   background-color: var(--hover);
-}
-.nav {
+
+
+.nav{
     max-height: 0;
     transition: max-height .5s ease-out;
 }
-.solo {
-    cursor: pointer;
-    float: right;
-    padding: 35px 20px;
+
+
+.hamburger{
+     cursor: pointer;
+     float: right;
+     padding: 35px 20px;
+}
+
+
+.hamb-line{
+background: var(--fonte);
+display: block;
+height: 2px;
+position: relative;
+width: 24px;
 
 }
-.solo-line {
-    background: var(--fonte);
-    display: block;
-    height: 2px;
-    position: relative;
-    width: 24px;
 
-}
-.solo-line::before,
-.solo-line::after{
-    background: var(--fonte);
+.hamb-line::before,
+.hamb-line::after{
+    background-color: var(--fonte);
     content: '';
     display: block;
     height: 100%;
     position: absolute;
-    transition: all 2s ease-out;
+    transition: all .2s ease-out;
     width: 100%;
 }
-.solo-line::before {
+
+
+.hamb-line::before{
     top: 5px;
 }
-.solo-line::after{
-   top: -5px;
 
+
+.hamb-line::after{
+    top: -5px;
 }
-.side-menu {
+
+
+.side-menu{
     display: none;
 }
-.side-menu:checked ~ nav{
-    max-width: 100%;
 
-}
-.side-menu:checked ~ .solo .solo-line {
-    background: transparent;
 
+.side-menu:checked ~  nav{
+    max-height: 100%;
 }
-.side-menu:checked ~ .solo .solo-line{
+
+
+.side-menu:checked ~ .hamburger .hamb-line{
     background: transparent;
 }
-.side-menu:checked ~ .solo .solo-line::before{
+
+
+.side-menu:checked ~ .hamburger .hamb-line::before{
     transform: rotate(-45deg);
     top: 0;
-}.side-menu:checked ~ .solo .solo-line::after{
+}
+
+
+.side-menu:checked ~ .hamburger .hamb-line::after{
     transform: rotate(45deg);
     top: 0;
 }
-.conteudo-musica{
-    width: 100%;
-}
-.header{
-    width: 100%;
-    height: 50px;
-    background-color: rgb(163, 101, 221);
 
 
-}
-.conteudo-musica{
+
+.menu{
     width: 100%;
-    
+    position: sticky;
+    background-color: var(--fundo);
+    top: 0;
+    font-size: 54px;
 }
+
+
+.conteudo-musica{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100%;
+
+}
+
+
 .rodape{
     width: 100%;
-    background-color: rgb(153, 65, 80);
+    background-color:rgb(219, 156, 255);
     text-align: center;
 }
-.desc-estilos{
-    width: 100%;
-    background-color: rgb(177, 198, 243);
-}
-.desc-solo{
-    width: 100%;
-    background-color: rgb(194, 79, 117);
-}
-.desc-grupo{
-    width: 100%;
-    background-color: rgb(127, 204, 255);
-}
-.desc-bandas{
-    width: 100%;
-    background-color: rgb(231, 128, 162);
-}
-.desc-app{
-    width: 100%;
-    background-color: rgb(137, 186, 219);
-}
-.img-ini{
-    width: 100%;
-}
-@media screen and (min-width: 768px) {
-   .nav {
-    max-height: none;
-    top: 0;
-    position: relative;
-    float: right;
-    width: fit-content;
-    background-color: transparent;
-   }
-   .menu li {
-    float: left;
-   }
-   .menu a:hover {
-    background-color: transparent;
-    color: var(--fundo);
-   }
+
+.definicao{
+    width: 100vw;
+    padding: 0;
+    background-color: whitesmoke;
+    grid-area: def;
 }
 
-@media screen and (min-width: 1280px) {
-    .menu{
-        height: 200px;
-        background-color: rgb(142, 97, 184);
-        font-size: 64px;
-    }
-    .img-ini {
-        width: 50%;
-    }
-    .desc-solo {
+.img-definicao{
+    display: none;
+}
+
+.descricao{
+    width: 100vw;
+}
+
+
+@media screen and (min-width: 600px) {
+      .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+      }
+      .menu li{
+        float: left;
+      }
+      .menu a:hover{
+        background-color:transparent;
+        color: var(--rover);
+      } 
+      .hamb {
+        display: none;
+      }
+      #logo {
+        width: 16vh;
+        height: 16vh;
+      }
+      .conteudo-musica{
         display: grid;
-    }
-    
+        justify-content: center;
+        align-items: center;
+      }
+      .descricao{
+        display: block;
+        width: 80vw;
+      }
+      .img-definicao{
+        display: block;
+        width: 10vw;
+      }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.oq{
+    background-color: rgba(150, 255, 255, 0.582);
+    height: 35px;
+    width: 100%;
+    font-size: 35px;
 }
